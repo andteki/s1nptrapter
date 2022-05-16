@@ -13,3 +13,17 @@ EOT;
     $con->query($sql);
 
 }
+
+function getDatas($con) {
+    $sql = "select * from datas";
+
+    if($result = $con->query($sql)) {
+        for( $datar = array(); 
+        $row = $result->fetch_assoc(); 
+        $datar[] = $row);
+
+    }else {
+        echo "Hiba! A lekérdezése sikertelten!";
+    }
+    return $datar;
+}

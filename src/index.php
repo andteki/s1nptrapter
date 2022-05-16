@@ -1,7 +1,7 @@
 <?php
 
 /*
-* File: about.php
+* File: index.php
 * Author: Nagy János
 * Copyright: 2022, Nagy János
 * Group: Szoft I N
