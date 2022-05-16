@@ -1,7 +1,7 @@
 <?php
 
 /*
-* File: about.php
+* File: result.php
 * Author: Nagy János
 * Copyright: 2022, Nagy János
 * Group: Szoft I N
@@ -9,6 +9,9 @@
 * Github: https://github.com/andteki/
 * Licenc: GNU GPL
 */
+
+include_once('includes/mariadb.php');
+include_once('includes/data.php');
 
 $aside = $_GET['aSide'];
 $bside = $_GET['bSide'];
@@ -22,6 +25,9 @@ sqrt(
     ($aside+$bside-$cside-$dside)*
     (-$aside+$bside+$cside+$dside) 
   );
+$con = connectDB();
+insertData($con, $aside, $bside, $cside, $dside, $terulet);
+
 
 
 echo file_get_contents('templates/head.html');
