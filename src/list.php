@@ -15,9 +15,7 @@ include_once('includes/data.php');
 
 $con = connectDB();
 $datar = getDatas($con);
-
-
-
+closeDB($con);
 
 
 echo file_get_contents('templates/head.html');
@@ -36,8 +34,6 @@ foreach($datar as $row) {
     $tableRow = str_replace('{{ area }}', $row['area'], $tableRow);
     $tableBody = $tableBody . $tableRow;
 }
-
-// echo "teljes tartalom".$tableBody;
 
 $page = file_get_contents('templates/list.html');
 $page = str_replace('{{ dataBody }}', $tableBody, $page);

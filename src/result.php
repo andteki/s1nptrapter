@@ -27,7 +27,7 @@ sqrt(
   );
 $con = connectDB();
 insertData($con, $aside, $bside, $cside, $dside, $terulet);
-
+closeDB($con);
 
 
 echo file_get_contents('templates/head.html');

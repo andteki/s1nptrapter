@@ -10,3 +10,7 @@ function connectDB() {
     }
     return $con;
 }
+
+function closeDB($con) {
+    $con->close();
+}
